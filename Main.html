@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <script src="https://cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.js"></script>
+        <script src="Jogo.js"></script>
+        <script src="Final.js"></script>
+        <style>
+            body {
+                margin-top: 1px;
+                padding: 0;
+            }
+
+            canvas {
+                width: 800px
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div id = "game"></div>
+
+        <script type = "text/javascript">
+            var configurações = {
+                type: Phaser.AUTO,
+                scale: {
+                    mode: Phaser.Scale.FIT
+                },
+                autoCenter: Phaser.Scale.CENTER,
+                width: 800,
+                height: 600,
+                physics: {
+                    default: "arcade",
+                    arcade: {
+                        gravity: {
+                            y: 300
+                        },
+                        debug: false
+                    }
+                },
+                parent: "game",
+                dom:{
+                    createContainer: true,
+                },
+                scene: [Jogo, Final],
+            }
+
+            var game = new Phaser.Game(configurações)
+            game.scene.start("Jogo")
+        </script>
+    </body>
+</html>
