@@ -43,6 +43,7 @@ class Jogo extends Phaser.Scene {
     }
     
     create() {
+
         this.add.image(400, 300, "fundo");
 
         //Criação dos obstáculos
@@ -214,3 +215,23 @@ class Jogo extends Phaser.Scene {
     }
 };
 
+var configurações = {
+    type: Phaser.AUTO,
+    scale: {
+        mode: Phaser.Scale.RESIZE,
+    },
+    autoCenter: Phaser.Scale.CENTER,
+    width: 800,
+    height: 600,
+    physics: {
+        default: "arcade",
+        arcade: {
+            gravity: {
+                y: 300
+            },
+            debug: false
+        }
+    },
+}
+
+var game = new Phaser.Game(configurações)
